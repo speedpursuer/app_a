@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--<style name="myTheme" parent="@android:style/Theme.Holo">-->
+        <!--<item name="android:actionBarTabStyle">@style/tab_nav</item>-->
+        <!--&lt;!&ndash;<item name="android:actionBarTabTextStyle">@style/tab_nav_text</item>&ndash;&gt;-->
+        <!--<item name="android:actionBarSize">300dp</item>-->
+    <!--</style>-->
+
+    <!--<style name="tab_nav">-->
+        <!--&lt;!&ndash;<item name="android:paddingLeft">32dp</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:paddingRight">32dp</item>&ndash;&gt;-->
+    <!--</style>-->
+
+</resources>
