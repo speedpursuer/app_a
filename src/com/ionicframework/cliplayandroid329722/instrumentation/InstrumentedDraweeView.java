@@ -63,7 +63,7 @@ public class InstrumentedDraweeView extends SimpleDraweeView implements Instrume
   }
 
   private void init() {
-    mInstrumentation = new Instrumentation(this);
+//    mInstrumentation = new Instrumentation(this);
     mListener = new BaseControllerListener<Object>() {
       @Override
       public void onSubmit(String id, Object callerContext) {
@@ -85,7 +85,7 @@ public class InstrumentedDraweeView extends SimpleDraweeView implements Instrume
       }
       @Override
       public void onFailure(String id, Throwable throwable) {
-        mInstrumentation.onFailure(throwable);
+//        mInstrumentation.onFailure(throwable);
       }
       @Override
       public void onRelease(String id) {
@@ -95,8 +95,9 @@ public class InstrumentedDraweeView extends SimpleDraweeView implements Instrume
   }
 
   @Override
-  public void initInstrumentation(String tag, PerfListener perfListener) {
-    mInstrumentation.init(tag, perfListener);
+//  public void initInstrumentation(String tag, PerfListener perfListener) {
+  public void initInstrumentation(String tag) {
+//    mInstrumentation.init(tag, perfListener);
     this.position = Integer.valueOf(tag).intValue();
   }
 

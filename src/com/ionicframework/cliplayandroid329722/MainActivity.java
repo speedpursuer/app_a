@@ -19,17 +19,71 @@
 
 package com.ionicframework.cliplayandroid329722;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.TextView;
+
+import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushManager;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipeline;
 
 import org.apache.cordova.CordovaActivity;
 
 public class MainActivity extends CordovaActivity
 {
+//    private AlertDialog dialog;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
+        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, "Sk05U14kHEFgG6hEpiEDczkE");
         loadUrl(launchUrl);
+    }
+
+    public void showDialog(String title, String desc, boolean clean) {
+
+//        if(dialog!= null) dialog = null;
+
+        TextView view = new TextView(this);
+        view.setText(title);
+        view.setGravity(Gravity.CENTER);
+        view.setTextColor(Color.WHITE);
+        view.setTextSize(20);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        if(!clean) {
+            builder.setCustomTitle(view)
+                .setMessage(desc)
+                .setNegativeButton("好", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+        }else{
+            builder.setCustomTitle(view)
+                .setMessage(desc)
+                .setPositiveButton("删除", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ImagePipeline imagePipeline = Fresco.getImagePipeline();
+                        imagePipeline.clearCaches();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+        }
+
+        builder.create().show();
     }
 }

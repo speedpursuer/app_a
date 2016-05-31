@@ -32,7 +32,6 @@ import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.ionicframework.cliplayandroid329722.GifActivity;
 import com.ionicframework.cliplayandroid329722.instrumentation.InstrumentedDraweeView;
-import com.ionicframework.cliplayandroid329722.instrumentation.PerfListener;
 
 import java.io.File;
 
@@ -43,8 +42,10 @@ public class FrescoHolder extends BaseViewHolder<InstrumentedDraweeView> impleme
 
   public FrescoHolder(
       Context context, View parentView,
-      InstrumentedDraweeView intrumentedDraweeView, PerfListener perfListener) {
-    super(context, parentView, intrumentedDraweeView, perfListener);
+      InstrumentedDraweeView intrumentedDraweeView) {
+//    InstrumentedDraweeView intrumentedDraweeView, PerfListener perfListener) {
+//    super(context, parentView, intrumentedDraweeView, perfListener);
+    super(context, parentView, intrumentedDraweeView);
     intrumentedDraweeView.setOnClickListener(this);
   }
 
@@ -73,11 +74,10 @@ public class FrescoHolder extends BaseViewHolder<InstrumentedDraweeView> impleme
   @Override
   public void onClick(View view) {
     File f = getCachedImageOnDisk(Uri.parse(URL));
-    if(f == null) {
+    Animatable animation = ((InstrumentedDraweeView)view).getController().getAnimatable();
+    if(f == null || animation == null) {
         return;
     }
-
-    Animatable animation = ((InstrumentedDraweeView)view).getController().getAnimatable();
 
     if (animation.isRunning()) {
         animation.stop();

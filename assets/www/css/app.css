@@ -107,6 +107,7 @@ ion-tabs.tabs-color-active-assertive .tab-item.tab-item-active, .basketball{
 	background-position: center 0%;
 }
 
+/*
 @media (min-height:480px) {
     .box {
     	background-size: auto 368px;
@@ -131,11 +132,17 @@ ion-tabs.tabs-color-active-assertive .tab-item.tab-item-active, .basketball{
     }
 }
 
+@media (min-height:889px) {
+    .box {
+    	background-size: auto 778px;
+    }
+}
+
 @media (min-height:1024px) {
     .box {
     	background-size: auto 912px;
     }
-}
+}*/
 
 .boxLoading {
 	background-image: url(../images/oval.svg) !important;	

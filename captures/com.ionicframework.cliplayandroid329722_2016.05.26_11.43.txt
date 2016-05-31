@@ -1,0 +1,85 @@
+TASK com.ionicframework.cliplayandroid329722 id=161
+  ACTIVITY com.ionicframework.cliplayandroid329722/.ClipActivity 2223a860 pid=3909
+    Local Activity 21ec1f88 State:
+      mResumed=true mStopped=false mFinished=false
+      mLoadersStarted=true
+      mChangingConfigurations=false
+      mCurrentConfig={1.0 ?mcc?mnc zh_CN ldltr sw600dp w600dp h888dp 213dpi lrg port finger -keyb/v/h -nav/h s.15}
+    FragmentManager misc state:
+      mActivity=com.ionicframework.cliplayandroid329722.ClipActivity@21ec1f88
+      mContainer=android.app.Activity$1@2210b9d0
+      mCurState=5 mStateSaved=false mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=true
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=true
+      mLastFrameTime=36059928 (10 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{21f081b0 V.E..... R....... 0,0-800,1216}
+        com.android.internal.widget.ActionBarOverlayLayout{21ec42c8 V.E..... ........ 0,0-800,1216 #102033f android:id/action_bar_overlay_layout}
+          android.widget.FrameLayout{21fba430 V.E..... ........ 0,108-800,1216 #1020002 android:id/content}
+            android.widget.LinearLayout{22036440 V.E..... ........ 0,0-800,1108}
+              android.support.v7.widget.RecyclerView{2201fec0 VFED.V.. .F...... 21,21-779,1087 #7f0c005a app:id/image_grid}
+                InstrumentedDraweeView{holder=DraweeHolder{controllerAttached=true, holderAttached=true, drawableVisible=true, activityStarted=true, events=[ON_SET_HIERARCHY, ON_SET_CONTROLLER, ON_HOLDER_ATTACH, ON_ATTACH_CONTROLLER]}}
+                InstrumentedDraweeView{holder=DraweeHolder{controllerAttached=true, holderAttached=true, drawableVisible=true, activityStarted=true, events=[ON_SET_HIERARCHY, ON_SET_CONTROLLER, ON_HOLDER_ATTACH, ON_ATTACH_CONTROLLER]}}
+                InstrumentedDraweeView{holder=DraweeHolder{controllerAttached=true, holderAttached=true, drawableVisible=true, activityStarted=true, events=[ON_SET_HIERARCHY, ON_SET_CONTROLLER, ON_HOLDER_ATTACH, ON_ATTACH_CONTROLLER]}}
+          com.android.internal.widget.ActionBarContainer{21f025b8 V.ED.... ........ 0,33-800,108 #1020340 android:id/action_bar_container}
+            com.android.internal.widget.ActionBarView{21fc08f8 V.E..... ........ 0,0-800,75 #1020341 android:id/action_bar}
+              android.widget.LinearLayout{21fba5d0 V.....C. ......ID 0,0-0,75}
+                com.android.internal.widget.ActionBarView$HomeView{21ee9fd0 G.E..... ......I. 0,0-0,0}
+                  android.widget.ImageView{21f07c88 G.ED.... ......I. 0,0-0,0 #102025b android:id/up}
+                  android.widget.ImageView{21fdffd0 G.ED.... ......I. 0,0-0,0 #102002c android:id/home}
+                android.widget.LinearLayout{21fe6668 G.E..... ......I. 0,0-0,0}
+                  android.widget.TextView{22021240 V.ED.... ......ID 0,0-0,0 #1020266 android:id/action_bar_title}
+                  android.widget.TextView{22022200 G.ED.... ......I. 0,0-0,0 #1020267 android:id/action_bar_subtitle}
+              com.android.internal.view.menu.ActionMenuView{21ec4758 V.ED.... ......ID 800,0-800,75}
+            com.android.internal.widget.ActionBarContextView{21fba0e0 G.E..... ......ID 0,0-0,0 #1020342 android:id/action_context_bar}
+          com.android.internal.widget.ActionBarContainer{21fe6bb8 G.ED.... ......ID 0,0-0,0 #1020343 android:id/split_action_bar}
+    Looper (main, tid 1) {21ec0568}
+      Message 0: { when=0 what=2 arg1=1 obj=com.facebook.imagepipeline.animated.base.AbstractAnimatedDrawable$2@2201dfb8 target=android.view.Choreographer$FrameHandler }
+      Message 1: { when=+970ms callback=com.facebook.common.executors.ScheduledFutureImpl target=android.os.Handler }
+      Message 2: { when=+1s271ms callback=com.facebook.common.executors.ScheduledFutureImpl target=android.os.Handler }
+      Message 3: { when=+5s727ms what=2 target=com.android.org.chromium.base.SystemMessageHandler }
+      (Total messages: 4, idling=false, quitting=false)
+
+  ACTIVITY com.ionicframework.cliplayandroid329722/.MainActivity 220291a0 pid=3909
+    Local Activity 21edba40 State:
+      mResumed=false mStopped=true mFinished=false
+      mLoadersStarted=false
+      mChangingConfigurations=false
+      mCurrentConfig={1.0 ?mcc?mnc zh_CN ldltr sw600dp w600dp h888dp 213dpi lrg port finger -keyb/v/h -nav/h s.15}
+    FragmentManager misc state:
+      mActivity=com.ionicframework.cliplayandroid329722.MainActivity@21edba40
+      mContainer=android.app.Activity$1@21edbb10
+      mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=true
+      mLastFrameTime=36059962 (16 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{21efe360 I.E..... R......D 0,0-800,1216}
+        android.widget.LinearLayout{21efe838 V.E..... .......D 0,0-800,1216}
+          android.view.ViewStub{21f00780 G.E..... ......I. 0,0-0,0 #102033a}
+          android.widget.FrameLayout{21f009c8 V.E..... .......D 0,33-800,1216 #1020002 android:id/content}
+            org.apache.cordova.engine.SystemWebView{21eea708 VFED..C. .F....ID 0,0-800,1183 #64}
+    Looper (main, tid 1) {21ec0568}
+      Message 0: { when=+3ms what=2 arg1=1 obj=com.facebook.imagepipeline.animated.base.AbstractAnimatedDrawable$2@22100458 target=android.view.Choreographer$FrameHandler }
+      Message 1: { when=+965ms callback=com.facebook.common.executors.ScheduledFutureImpl target=android.os.Handler }
+      Message 2: { when=+1s266ms callback=com.facebook.common.executors.ScheduledFutureImpl target=android.os.Handler }
+      Message 3: { when=+5s722ms what=2 target=com.android.org.chromium.base.SystemMessageHandler }
+      (Total messages: 4, idling=false, quitting=false)

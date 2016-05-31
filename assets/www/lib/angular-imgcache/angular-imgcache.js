@@ -49,7 +49,11 @@ angular.module('ImgCache', [])
 
                 ImgCache.getCachedFileURL(src, function(src, dest) {
                     //$(el).hide();
-                    el.css({'background-image': 'url(' + dest + ')' });                   
+                    //el.css({'background-image': 'url(' + dest + ')' });
+                    el.css({
+                        'background-image': 'url(' + dest + ')',
+                        'background-size': 'auto ' + (window.innerHeight - 112) + 'px'
+                    });
                     if(callback) callback();
                     //$(el).fadeIn(800);
                 }, function(){

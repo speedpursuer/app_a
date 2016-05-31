@@ -15,7 +15,6 @@ package com.ionicframework.cliplayandroid329722.adapters;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
-import com.ionicframework.cliplayandroid329722.instrumentation.PerfListener;
 import com.ionicframework.cliplayandroid329722.holders.BaseViewHolder;
 
 import java.util.LinkedList;
@@ -26,15 +25,16 @@ import java.util.List;
  */
 public abstract class ImageListAdapter extends RecyclerView.Adapter<BaseViewHolder<?>> {
 
-  private final PerfListener mPerfListener;
+//  private final PerfListener mPerfListener;
 
   private final Context mContext;
 
   private List<String> mModel;
 
-  public ImageListAdapter(final Context context, final PerfListener perfListener) {
+//  public ImageListAdapter(final Context context, final PerfListener perfListener) {
+  public ImageListAdapter(final Context context) {
     this.mContext = context;
-    this.mPerfListener = perfListener;
+//    this.mPerfListener = perfListener;
     this.mModel = new LinkedList<String>();
   }
 
@@ -42,9 +42,9 @@ public abstract class ImageListAdapter extends RecyclerView.Adapter<BaseViewHold
     mModel.add(url);
   }
 
-  protected PerfListener getPerfListener() {
-    return mPerfListener;
-  }
+//  protected PerfListener getPerfListener() {
+//    return mPerfListener;
+//  }
 
   protected String getItem(final int position) {
     return mModel.get(position);

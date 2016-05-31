@@ -12,10 +12,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.facebook.common.logging.FLog;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipeline;
 import com.ionicframework.cliplayandroid329722.adapters.FrescoAdapter;
 import com.ionicframework.cliplayandroid329722.holders.FrescoHolder;
 import com.ionicframework.cliplayandroid329722.instrumentation.InstrumentedDraweeView;
-import com.ionicframework.cliplayandroid329722.instrumentation.PerfListener;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import org.json.JSONArray;
@@ -33,8 +34,6 @@ public class ClipActivity extends Activity {
     private com.ionicframework.cliplayandroid329722.adapters.ImageListAdapter mCurrentAdapter;
     private RecyclerView mRecyclerView;
 
-    private com.ionicframework.cliplayandroid329722.instrumentation.PerfListener mPerfListener;
-
     private List<String> mImageUrls = new ArrayList<>();
 
     private String title;
@@ -46,6 +45,9 @@ public class ClipActivity extends Activity {
     private static final int VERTICAL_ITEM_SPACE = 48;
 
     protected void onCreate(Bundle savedInstanceState) {
+
+//        int maxM = (int) Runtime.getRuntime().maxMemory();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -70,8 +72,6 @@ public class ClipActivity extends Activity {
 
         FLog.setMinimumLoggingLevel(FLog.WARN);
         com.ionicframework.cliplayandroid329722.Drawables.init(getResources());
-
-        mPerfListener = new PerfListener();
 
         if (savedInstanceState != null) {
 
@@ -121,12 +121,17 @@ public class ClipActivity extends Activity {
 //        FLog.w("Cliplay", "onStop");
 //        // The activity is no longer visible (it is now "stopped")
 //    }
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ImagePipeline imagePipeline = Fresco.getImagePipeline();
+        imagePipeline.clearMemoryCaches();
+//        mRecyclerView = null;
+//        resetAdapter();
+//        imagePipeline.clearDiskCaches();
 //        FLog.w("Cliplay", "onDestroy");
-//        // The activity is about to be destroyed.
-//    }
+        // The activity is about to be destroyed.
+    }
 
     public void updateAutoPlay() {
         GridLayoutManager layoutManager = ((GridLayoutManager)mRecyclerView.getLayoutManager());
@@ -238,11 +243,11 @@ public class ClipActivity extends Activity {
 
         resetAdapter();
 
-        mPerfListener = new PerfListener();
+//        mPerfListener = new PerfListener();
 
         mCurrentAdapter = new FrescoAdapter(
                 this,
-                mPerfListener,
+//                mPerfListener,
                 com.ionicframework.cliplayandroid329722.configs.imagepipeline.ImagePipelineConfigFactory.getOkHttpImagePipelineConfig(this)
         );
 

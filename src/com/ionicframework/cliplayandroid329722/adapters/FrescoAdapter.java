@@ -25,7 +25,6 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.ionicframework.cliplayandroid329722.Drawables;
 import com.ionicframework.cliplayandroid329722.holders.FrescoHolder;
 import com.ionicframework.cliplayandroid329722.instrumentation.InstrumentedDraweeView;
-import com.ionicframework.cliplayandroid329722.instrumentation.PerfListener;
 
 /**
  * RecyclerView Adapter for Fresco
@@ -34,9 +33,10 @@ public class FrescoAdapter extends ImageListAdapter {
 
   public FrescoAdapter(
       Context context,
-      PerfListener perfListener,
+//      PerfListener perfListener,
       ImagePipelineConfig imagePipelineConfig) {
-    super(context, perfListener);
+//    super(context, perfListener);
+    super(context);
     Fresco.initialize(context, imagePipelineConfig);
   }
 
@@ -55,7 +55,8 @@ public class FrescoAdapter extends ImageListAdapter {
         .build();
     final InstrumentedDraweeView instrView = new InstrumentedDraweeView(getContext(), gdh);
 
-    return new FrescoHolder(getContext(), parent, instrView, getPerfListener());
+//    return new FrescoHolder(getContext(), parent, instrView, getPerfListener());
+    return new FrescoHolder(getContext(), parent, instrView);
   }
 
   @Override

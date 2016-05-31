@@ -1,0 +1,168 @@
+Applications Memory Usage (kB):
+Uptime: 36635874 Realtime: 88005870
+
+Total PSS by process:
+   114081 kB: com.asus.browser (pid 15080 / activities)
+    57775 kB: com.tencent.mm (pid 2037)
+    45503 kB: system (pid 506)
+    44758 kB: com.android.systemui (pid 574)
+    35512 kB: com.asus.launcher (pid 669 / activities)
+    25002 kB: com.wandoujia.phoenix2 (pid 1626)
+    23194 kB: mediaserver (pid 185)
+    22479 kB: com.tencent.mm:push (pid 1588)
+    19584 kB: com.asus.ime (pid 731)
+    19009 kB: surfaceflinger (pid 171)
+    16099 kB: android.process.media (pid 766)
+    12754 kB: com.android.vending (pid 7016)
+    11372 kB: zygote (pid 172)
+    11252 kB: com.asus.weathertime:main (pid 1690)
+     9884 kB: com.android.packageinstaller (pid 4207)
+     9551 kB: com.baidu.BaiduMap:bdservice_v1 (pid 3715)
+     9146 kB: com.asus.services (pid 591)
+     8934 kB: com.android.phone (pid 758)
+     6884 kB: com.asus.calendar (pid 9229)
+     6671 kB: com.intel.asf.securitymanagerservice (pid 607)
+     6563 kB: com.asus.sitd.whatsnext (pid 4303)
+     6229 kB: com.asus.contacts (pid 1051)
+     5976 kB: com.baidu.map.location (pid 744)
+     5938 kB: com.android.bluetooth (pid 1129)
+     5685 kB: com.android.chrome (pid 4262)
+     4833 kB: com.asus.maxxaudio (pid 801)
+     4806 kB: com.android.defcontainer (pid 1063)
+     4362 kB: com.asus.livedemo (pid 22052)
+     4028 kB: com.android.documentsui (pid 4233)
+     3924 kB: com.asus.powersaver:main (pid 939)
+     3588 kB: com.android.keychain (pid 3782)
+     3487 kB: com.intel.widi.uibc (pid 1501)
+     3364 kB: com.asus.photoframe (pid 3796)
+     3235 kB: drmserver (pid 178)
+     3204 kB: com.intel.security.service (pid 781)
+     3084 kB: com.asus.livedemoservice (pid 808)
+     3008 kB: com.android.smspush (pid 861)
+     3002 kB: com.asus.UpdateLauncher (pid 4277)
+     2975 kB: com.android.externalstorage (pid 4246)
+     1950 kB: wpa_supplicant (pid 714)
+     1573 kB: glgps (pid 186)
+     1364 kB: netd (pid 169)
+     1299 kB: coreu (pid 187)
+     1130 kB: securityfileservice (pid 180)
+     1085 kB: vold (pid 163)
+     1058 kB: sdcard (pid 1043)
+     1049 kB: keystore (pid 175)
+      999 kB: logcat (pid 4299)
+      966 kB: sdcard (pid 203)
+      862 kB: dhcpcd (pid 14483)
+      800 kB: hdcpd (pid 176)
+      793 kB: rfid_monzaxd (pid 177)
+      759 kB: installd (pid 174)
+      747 kB: dumpsys (pid 4329)
+      739 kB: akmd09911 (pid 181)
+      719 kB: debuggerd (pid 170)
+      674 kB: servicemanager (pid 162)
+      574 kB: /init (pid 1)
+      372 kB: ueventd (pid 121)
+      344 kB: adbd (pid 224)
+      268 kB: healthd (pid 161)
+      268 kB: /upi_ug31xx (pid 166)
+       80 kB: watchdogd (pid 167)
+
+Total PSS by OOM adjustment:
+    81644 kB: Native
+               23194 kB: mediaserver (pid 185)
+               19009 kB: surfaceflinger (pid 171)
+               11372 kB: zygote (pid 172)
+                4362 kB: com.asus.livedemo (pid 22052)
+                3235 kB: drmserver (pid 178)
+                1950 kB: wpa_supplicant (pid 714)
+                1573 kB: glgps (pid 186)
+                1364 kB: netd (pid 169)
+                1299 kB: coreu (pid 187)
+                1130 kB: securityfileservice (pid 180)
+                1085 kB: vold (pid 163)
+                1058 kB: sdcard (pid 1043)
+                1049 kB: keystore (pid 175)
+                 999 kB: logcat (pid 4299)
+                 966 kB: sdcard (pid 203)
+                 862 kB: dhcpcd (pid 14483)
+                 800 kB: hdcpd (pid 176)
+                 793 kB: rfid_monzaxd (pid 177)
+                 759 kB: installd (pid 174)
+                 747 kB: dumpsys (pid 4329)
+                 739 kB: akmd09911 (pid 181)
+                 719 kB: debuggerd (pid 170)
+                 674 kB: servicemanager (pid 162)
+                 574 kB: /init (pid 1)
+                 372 kB: ueventd (pid 121)
+                 344 kB: adbd (pid 224)
+                 268 kB: healthd (pid 161)
+                 268 kB: /upi_ug31xx (pid 166)
+                  80 kB: watchdogd (pid 167)
+    45503 kB: System
+               45503 kB: system (pid 506)
+    96729 kB: Persistent
+               44758 kB: com.android.systemui (pid 574)
+               16099 kB: android.process.media (pid 766)
+                9146 kB: com.asus.services (pid 591)
+                8934 kB: com.android.phone (pid 758)
+                6671 kB: com.intel.asf.securitymanagerservice (pid 607)
+                4833 kB: com.asus.maxxaudio (pid 801)
+                3204 kB: com.intel.security.service (pid 781)
+                3084 kB: com.asus.livedemoservice (pid 808)
+    39436 kB: Foreground
+               35512 kB: com.asus.launcher (pid 669 / activities)
+                3924 kB: com.asus.powersaver:main (pid 939)
+    19728 kB: Visible
+                5976 kB: com.baidu.map.location (pid 744)
+                5938 kB: com.android.bluetooth (pid 1129)
+                4806 kB: com.android.defcontainer (pid 1063)
+                3008 kB: com.android.smspush (pid 861)
+    25813 kB: Perceptible
+               19584 kB: com.asus.ime (pid 731)
+                6229 kB: com.asus.contacts (pid 1051)
+    34553 kB: A Services
+               25002 kB: com.wandoujia.phoenix2 (pid 1626)
+                9551 kB: com.baidu.BaiduMap:bdservice_v1 (pid 3715)
+    94993 kB: B Services
+               57775 kB: com.tencent.mm (pid 2037)
+               22479 kB: com.tencent.mm:push (pid 1588)
+               11252 kB: com.asus.weathertime:main (pid 1690)
+                3487 kB: com.intel.widi.uibc (pid 1501)
+   172808 kB: Cached
+              114081 kB: com.asus.browser (pid 15080 / activities)
+               12754 kB: com.android.vending (pid 7016)
+                9884 kB: com.android.packageinstaller (pid 4207)
+                6884 kB: com.asus.calendar (pid 9229)
+                6563 kB: com.asus.sitd.whatsnext (pid 4303)
+                5685 kB: com.android.chrome (pid 4262)
+                4028 kB: com.android.documentsui (pid 4233)
+                3588 kB: com.android.keychain (pid 3782)
+                3364 kB: com.asus.photoframe (pid 3796)
+                3002 kB: com.asus.UpdateLauncher (pid 4277)
+                2975 kB: com.android.externalstorage (pid 4246)
+
+Total PSS by category:
+   171454 kB: Dalvik
+   146655 kB: Native
+   122046 kB: .so mmap
+    44866 kB: Dalvik Other
+    41933 kB: .dex mmap
+    40136 kB: Other mmap
+    20972 kB: Unknown
+    13079 kB: .apk mmap
+     5760 kB: Stack
+     2644 kB: .ttf mmap
+      836 kB: Cursor
+      384 kB: Ashmem
+      282 kB: Other dev
+      160 kB: .jar mmap
+        0 kB: code mmap
+        0 kB: image mmap
+        0 kB: Graphics
+        0 kB: GL
+        0 kB: Memtrack
+
+Total RAM: 1937492 kB
+ Free RAM: 1509172 kB (172808 cached pss + 557764 cached + 778600 free)
+ Used RAM: 615463 kB (438399 used pss + 19796 buffers + 110196 shmem + 47072 slab)
+ Lost RAM: -187143 kB
+   Tuning: 96 (large 256), oom 122880 kB, restore limit 40960 kB (high-end-gfx)

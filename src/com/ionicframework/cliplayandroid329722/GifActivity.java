@@ -1,15 +1,17 @@
 package com.ionicframework.cliplayandroid329722;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.pm.ConfigurationInfo;
 import android.content.pm.FeatureInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-
-import com.facebook.common.logging.FLog;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -40,6 +42,7 @@ import static android.opengl.GLES20.glDrawArrays;
 import static android.opengl.GLES20.glEnableVertexAttribArray;
 import static android.opengl.GLES20.glGenTextures;
 import static android.opengl.GLES20.glGetAttribLocation;
+import static android.opengl.GLES20.glGetShaderInfoLog;
 import static android.opengl.GLES20.glGetUniformLocation;
 import static android.opengl.GLES20.glLinkProgram;
 import static android.opengl.GLES20.glShaderSource;
@@ -58,8 +61,8 @@ public class GifActivity extends Activity {
     private int screenWidth;
     private int screenHeight;
     private int noOfFrames;
-    private float theImpactPoint;
-    private boolean isRunning;
+//    private float theImpactPoint;
+//    private boolean isRunning;
 
     private static final String VERTEX_SHADER_CODE =
             "attribute vec4 position;" +
@@ -72,7 +75,8 @@ public class GifActivity extends Activity {
                     "}";
 
     private static final String FRAGMENT_SHADER_CODE =
-            "varying vec2 textureCoordinate;" +
+//            "varying mediump vec2 textureCoordinate;" +
+            "varying lowp vec2 textureCoordinate;" +
                     "uniform sampler2D texture;" +
                     "void main() { " +
                     "    gl_FragColor = texture2D(texture, textureCoordinate);" +
@@ -90,7 +94,7 @@ public class GifActivity extends Activity {
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-        if (!isOpenGLES2Supported()) {
+        if (!supportsEs2()) {
 //            Snackbar.make(container, R.string.gles2_not_supported, Snackbar.LENGTH_LONG).show();
             return;
         }
@@ -207,8 +211,8 @@ public class GifActivity extends Activity {
             glVertexAttribPointer(position, 2, GL_FLOAT, false, 0, verticesBuffer);
             glEnableVertexAttribArray(position);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, mGifTexImage2D.getWidth(), mGifTexImage2D.getHeight(), 0, GL_RGBA, GL_UNSIGNED_BYTE, null);
-            FLog.w("Cliplay", "mGifTexImage2D.getWidth(): %d", mGifTexImage2D.getWidth());
-            FLog.w("Cliplay", "mGifTexImage2D.getHeight(): %d", mGifTexImage2D.getHeight());
+//            FLog.w("Cliplay", "mGifTexImage2D.getWidth(): %d", mGifTexImage2D.getWidth());
+//            FLog.w("Cliplay", "mGifTexImage2D.getHeight(): %d", mGifTexImage2D.getHeight());
         }
 
         @Override
@@ -229,6 +233,7 @@ public class GifActivity extends Activity {
         int shader = glCreateShader(shaderType);
         glShaderSource(shader, source);
         glCompileShader(shader);
+        Log.w("shader info log", glGetShaderInfoLog(shader));
         return shader;
     }
 
@@ -251,6 +256,21 @@ public class GifActivity extends Activity {
                 }
             }
         }
+
         return false;
+    }
+
+    private boolean supportsEs2() {
+//        String version = javax.microedition.khronos.opengles.GL10.glGetString(
+//                GL10.GL_VERSION);
+//        Log.w("Cliplay", "Version: " + version );
+
+        final ActivityManager activityManager =
+                (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        final ConfigurationInfo configurationInfo =
+                activityManager.getDeviceConfigurationInfo();
+        final boolean supportsEs2 = configurationInfo.reqGlEsVersion >= 0x20000;
+
+        return supportsEs2;
     }
 }

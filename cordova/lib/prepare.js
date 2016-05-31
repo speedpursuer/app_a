@@ -212,7 +212,7 @@ function handleSplashes(projectConfig, platformRoot) {
     var resources = projectConfig.getSplashScreens('android');
     // if there are "splash" elements in config.xml
     if (resources.length > 0) {
-        deleteDefaultResourceAt(platformRoot, 'screen.png');
+        deleteDefaultResourceAt(platformRoot, 'splash.png');
         events.emit('verbose', 'splash screens: ' + JSON.stringify(resources));
 
         // The source paths for icons and splashes are relative to
@@ -228,11 +228,11 @@ function handleSplashes(projectConfig, platformRoot) {
             if (resource.density == 'mdpi') {
                 hadMdpi = true;
             }
-            copyImage(path.join(projectRoot, resource.src), destination, resource.density, 'screen.png');
+            copyImage(path.join(projectRoot, resource.src), destination, resource.density, 'splash.png');
         });
         // There's no "default" drawable, so assume default == mdpi.
         if (!hadMdpi && resources.defaultResource) {
-            copyImage(path.join(projectRoot, resources.defaultResource.src), destination, 'mdpi', 'screen.png');
+            copyImage(path.join(projectRoot, resources.defaultResource.src), destination, 'mdpi', 'splash.png');
         }
     }
 }

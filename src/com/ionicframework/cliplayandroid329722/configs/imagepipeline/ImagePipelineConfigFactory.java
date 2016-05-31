@@ -14,6 +14,8 @@ package com.ionicframework.cliplayandroid329722.configs.imagepipeline;
 
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Environment;
 
@@ -51,8 +53,8 @@ public class ImagePipelineConfigFactory {
     if (sImagePipelineConfig == null) {
       ImagePipelineConfig.Builder configBuilder = ImagePipelineConfig.newBuilder(context);
       configureCaches(configBuilder, context);
-      configureLoggingListeners(configBuilder);
-      configureOptions(configBuilder);
+//      configureLoggingListeners(configBuilder);
+//      configureOptions(configBuilder);
       sImagePipelineConfig = configBuilder.build();
     }
     return sImagePipelineConfig;
@@ -65,7 +67,15 @@ public class ImagePipelineConfigFactory {
     if (sOkHttpImagePipelineConfig == null) {
       OkHttpClient okHttpClient = new OkHttpClient();
 //      okHttpClient.networkInterceptors().add(new StethoInterceptor());
-      okHttpClient.dispatcher().setMaxRequests(1);
+
+      ConnectivityManager connMgr = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+      NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+      if(networkInfo.getTypeName().equals("WIFI")) {
+          okHttpClient.dispatcher().setMaxRequests(2);
+      }else {
+          okHttpClient.dispatcher().setMaxRequests(1);
+      }
 
       ImagePipelineConfig.Builder configBuilder =
         OkHttpImagePipelineConfigFactory.newBuilder(context, okHttpClient);

@@ -254,6 +254,7 @@ dependencies {
     compile 'com.facebook.fresco:animated-gif:0.10.0'
     compile "com.facebook.fresco:imagepipeline-okhttp3:0.10.0+"
     compile 'com.yqritc:recyclerview-flexibledivider:1.2.9'
+    compile files('libs/pushservice-5.0.0.66.jar')
     compile project(':android-gif-drawable')
 }
 

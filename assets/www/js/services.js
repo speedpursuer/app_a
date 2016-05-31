@@ -1,7 +1,7 @@
 angular.module('app.services', [])
 
 
-.factory('DBService', ['$q', '$timeout', 'pouchdb', 'ErrorService', 'FileCacheService', 'NativeService', function($q, $timeout, pouchdb, ErrorService, FileCacheService, NativeService) {
+.factory('DBService', ['$q', '$timeout', 'pouchdb', 'ErrorService', 'FileCacheService', 'NativeService', '$window', function($q, $timeout, pouchdb, ErrorService, FileCacheService, NativeService, $window) {
 
     var service = {};    
 
@@ -15,7 +15,9 @@ angular.module('app.services', [])
     
     var db = null;
 
-    var isPad = (typeof device !== 'undefined' && device.model.indexOf("iPad") !== -1)? true: false;
+//    var isPad = (typeof device !== 'undefined' && device.model.indexOf("iPad") !== -1)? true: false;
+
+    var isPad = $window.innerHeight >= 700? true: false;
 
     var play = {
         postInfo: false,
@@ -1503,12 +1505,19 @@ angular.module('app.services', [])
     //     cordova.exec(win, fail, "MyHybridPlugin", "playClip", [clipURL, favorite, showFavBut]);
     // };
 
-    service.showMessage = function(title, desc, retry) {        
-        var _retry = "false";
-        if(retry) {
-            _retry = "true";
-        }        
-        cordova.exec(win, fail, "MyHybridPlugin", "showMessage", [title, desc, _retry]);
+//    service.showMessage = function(title, desc, retry) {
+//        var _retry = "false";
+//        if(retry) {
+//            _retry = "true";
+//        }
+//        cordova.exec(win, fail, "MyHybridPlugin", "showMessage", [title, desc, _retry]);
+//    }
+
+    service.showMessage = function(title, desc, clean) {
+        if(!clean) {
+            clean = false;
+        }
+        HybridBridge.showAlert(title, desc, clean);
     }
     
     return service;
@@ -1534,10 +1543,22 @@ angular.module('app.services', [])
         }, 10);  
     };
 
-    service.showAlert = function(title, desc, retry) {
-        
-        NativeService.showMessage(title, desc? desc: "请稍后重试", retry);              
+    service.showAlert = function(title, desc, clean) {
+        NativeService.showMessage(title, desc? desc: "请稍后重试", clean);
     };
+
+//    service.showAlert = function(title, desc, retry) {
+//        HybridBridge.showAlert(
+//            title,
+//            desc,
+//            function(){
+//                console.log("Hybrid Bridge Success")
+//            },
+//            function(e)
+//                {console.log("Hybrid Bridge Error" + e)
+//            }
+//        );
+//    };
 
     service.showDownLoader = function() {
         $ionicLoading.show({     

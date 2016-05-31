@@ -20,7 +20,6 @@ import android.widget.AbsListView;
 
 import com.ionicframework.cliplayandroid329722.ClipActivity;
 import com.ionicframework.cliplayandroid329722.instrumentation.Instrumented;
-import com.ionicframework.cliplayandroid329722.instrumentation.PerfListener;
 
 /**
  * The base ViewHolder with instrumentation
@@ -28,7 +27,7 @@ import com.ionicframework.cliplayandroid329722.instrumentation.PerfListener;
 public abstract class BaseViewHolder<V extends View & Instrumented>
     extends RecyclerView.ViewHolder {
 
-  private final PerfListener mPerfListener;
+//  private final PerfListener mPerfListener;
   private final View mParentView;
   protected final V mImageView;
   private Context mContext;
@@ -38,11 +37,11 @@ public abstract class BaseViewHolder<V extends View & Instrumented>
   public BaseViewHolder(
       Context context,
       View parentView,
-      V imageView,
-      PerfListener perfListener) {
+      V imageView) {
+//      PerfListener perfListener) {
     super(imageView);
     this.mContext = context;
-    this.mPerfListener = perfListener;
+//    this.mPerfListener = perfListener;
     this.mParentView = parentView;
     this.mImageView = imageView;
     this.screenHeight = this.mContext.getResources().getDisplayMetrics().heightPixels;
@@ -54,7 +53,8 @@ public abstract class BaseViewHolder<V extends View & Instrumented>
   }
 
   public void bind(String model, int position) {
-    mImageView.initInstrumentation(Integer.toString(position), mPerfListener);
+    mImageView.initInstrumentation(Integer.toString(position));
+//    mImageView.initInstrumentation(Integer.toString(position), mPerfListener);
     onBind(model);
   }
 

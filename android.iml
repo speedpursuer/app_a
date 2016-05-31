@@ -130,6 +130,7 @@
     <orderEntry type="library" exported="" name="fbcore-0.10.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
+    <orderEntry type="library" exported="" name="pushservice-5.0.0.66" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-flexibledivider-1.2.9" level="project" />
     <orderEntry type="library" exported="" name="animated-base-support-0.10.0" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.1.4" level="project" />
